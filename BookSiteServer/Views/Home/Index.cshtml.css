@@ -1,0 +1,11 @@
+﻿
+.index-body {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url('img/img01.jpg');
+    background-size: cover;
+    background-position: center;
+    padding-top: 60px;
+    color: white;
+    font-weight: bold;
+}
