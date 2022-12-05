@@ -51,8 +51,24 @@ button.accept-policy {
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 2;
 }
 
 .content {
-    padding-top: 65px;
+    padding-top: 57px;
 }
+
+.csss_menu {
+    float: right;
+}
+
+.csss_search_menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+    .csss_search_menu li {
+        list-style: none;
+        padding-inline: .5rem;
+    }
