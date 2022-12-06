@@ -2,7 +2,133 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
+@*<div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>*@
+
+@*<div class="">
+    <div class="index_container_top">
+        <div class="index_container_left"></div>
+        <div class="index_container_right"></div>
+    </div>
+</div>*@
+
+<style>
+    .index_container_viewMore_right {
+        text-decoration: none;
+        font-style: italic;
+        margin-right: 30px;
+        margin-top: 10px;
+    }
+
+        .index_container_viewMore_right:hover {
+            cursor: pointer;
+            color:#212529;
+        }
+</style>
+
+<div class="index_container">
+    <div class="index_container_top">
+
+        <div class="index_container_logout">
+
+            <h1>YR Novels</h1>
+            <p>read your favourite novels here</p>
+
+            <div class="index_container_count">
+            </div>
+
+            <div class="index_container_account_btn">
+                <button id="index_container_account_log"><span></span>LogIn</button>
+                <button id="index_container_account_reg"><span></span>Create Account</button>
+            </div>
+
+        </div>
+
+        <div class="index_container_logon"></div>
+    
+    </div>
+
+    <div class="index_container_newBooks">
+
+        <div class="index_container_title">
+            <h1>New Novels</h1>
+            <a class="index_container_viewMore_right" asp-controller="Home" asp-action="NewNovels">View More >></a>
+        </div>
+
+        <div class="index_container_newBooks_content">
+            @for (int i = 0; i < 10; i++)
+            {
+                <div class="index_container_book">
+                    <div class="index_container_book_img" style="background-image:url(./img/book01.jpg);"></div>
+                    <div class="index_container_book_title">
+                        <h6>the old gods are whispering</h6>
+                    </div>
+                    <div class="index_container_book_info">
+                        <div class="index_container_book_info_gen">martial arts</div>
+                        <div class="index_container_book_info_chapters">234 ch</div>
+                    </div>
+                    <div class="index_container_book_time">Add 54 minutes ago</div>
+                </div>
+            }
+        </div>
+
+    </div>
+
+    <div class="index_container_app">
+        <div class="index_container_app_info">
+
+            <h2>Download Our Desktop Application</h2>
+            <h5>download our desktop application </h5>
+            <h5>for more easy access to the our book library</h5>
+
+            <button>Download</button>
+
+        </div>
+    </div>
+
+    <div class="index_container_social">
+        <div class="index_container_social_info">
+
+            <h2>join discord group chat</h2>
+            <h5>join our group chat on discord</h5>
+            <h5>by clicking the button below</h5>
+
+            <button>Discord</button>
+
+        </div>
+    </div>
+
+    <div class="index_container_updates">
+    </div>
+
+    <div class="index_container_ranking"></div>
+
+    <div class="index_container_recommends">
+
+        <div class="index_container_title">
+            <h1>Recommends</h1>
+            <a class="index_container_viewMore_right" asp-controller="Home" asp-action="NewNovels">View More >></a>
+        </div>
+
+        <div class="index_container_recommends_content">
+            @for (int i = 0; i < 10; i++)
+            {
+                <div class="index_container_book">
+                    <div class="index_container_book_img" style="background-image:url(./img/book01.jpg);"></div>
+                    <div class="index_container_book_title">
+                        <h6>the old gods are whispering</h6>
+                    </div>
+                    <div class="index_container_book_info">
+                        <div class="index_container_book_info_gen">martial arts</div>
+                        <div class="index_container_book_info_chapters">234 ch</div>
+                    </div>
+                    <div class="index_container_book_time">Add 54 minutes ago</div>
+                </div>
+            }
+        </div>
+
+    </div>
+
 </div>
