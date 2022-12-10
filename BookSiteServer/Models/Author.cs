@@ -10,6 +10,10 @@ namespace BookSiteServer.Models
         [Required]
         public string Name { get; set; }
 
-        public ICollection<AuthorName>? AltName { get; set; }
+        public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
+
+        public ICollection<AuthorName> AltName { get; set; }
+
+        public ICollection<Book> Books { get; set; }
     }
 }
