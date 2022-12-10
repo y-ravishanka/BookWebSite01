@@ -8,5 +8,7 @@ namespace BookSiteServer.Models
         public int AltNameId { get; set; }
 
         public string Name { get; set; }
+
+        public Author Author { get; set; }
     }
 }
