@@ -38,6 +38,16 @@ namespace BookSiteServer.Controllers
             return View();
         }
 
+        public IActionResult DisplayNovels()
+        {
+            return View();
+        }
+
+        public IActionResult ChapterView()
+        { 
+            return View(); 
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
