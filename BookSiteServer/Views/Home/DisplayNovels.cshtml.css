@@ -1,0 +1,23 @@
+﻿
+
+.displayNovels_container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #E6E6E6;
+}
+
+.displayNovels_container_title {
+    width: 100%;
+    padding: 10px 5px;
+    margin: 5px 0px;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    background-color: white;
+}
+
+.displayNovels_container_content {
+    height: 20vh;
+    width: 100%;
+    background-color: white;
+    /*margin: 5px 0px;*/
+}
