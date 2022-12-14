@@ -1,7 +1,14 @@
+using BookSiteServer.Data;
+using BookSiteServer.Services;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<BookSiteContext>();
+builder.Services.AddRazorPages();
+builder.Services.AddScoped<ICalculation,Calculation>();
 
 var app = builder.Build();
 
