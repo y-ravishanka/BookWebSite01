@@ -1,4 +1,7 @@
-﻿
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
 <div class="displayNovels_container">
 
     <div class="displayNovels_container_title">
@@ -6,9 +9,24 @@
     </div>
 
     <div class="displayNovels_container_content">
-        <p>dwi lwidjl a;wp owao wdwn jbwbfwoadn nwudwba wdw,hwiadnj bd dadiwajdnasdns nwadliwjdasldk dhwakd jbwkdwadki lkdwa wjal wjalidwa</p>
-        <p>dbiwahduwo jwoiadjp waj iwnudwbr waodpwap ; wjfwap jd nlwadi waojdlk kadladksnd wialddal</p>
-        <p>dwadw awdwa awdwr grfsf wafesfa</p>
+
+        @for (int i = 0; i < 8; i++)
+        {
+            string tmp = "novel" + @i;
+            <div class="displayNovels_container_book" id="@tmp">
+
+                <div style="" class="displayNovels_container_book_img"></div>
+                <div class="displayNovels_container_book_title">
+                    <h6>the old gods are whispering</h6>
+                </div>
+                <div class="displayNovels_container_book_rate">
+                    <h6>3.5/5</h6>
+                </div>
+            </div>
+        }
+
+
+
     </div>
 
 </div>

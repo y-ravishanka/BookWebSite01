@@ -24,8 +24,46 @@
 
         .index_container_viewMore_right:hover {
             cursor: pointer;
-            color:#212529;
+            color: #212529;
         }
+
+    .index_container_recommends_viewMore_btn {
+        background-color: #212529;
+        padding: 7.5px 20px;
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        border-radius: 6px;
+        border: 1px solid white;
+    }
+
+        .index_container_recommends_viewMore_btn:hover {
+            cursor: pointer;
+            color: #212529;
+            background-color: white;
+            border: 1px solid #212529;
+        }
+
+    .index_container_main_btn {
+        background-color: #212529;
+        padding: 7.5px 20px;
+        width: 150px;
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        border-radius: 6px;
+        border: 1px solid white;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+        .index_container_main_btn:hover {
+            cursor: pointer;
+            color: #212529;
+            background-color: transparent;
+            border: 1px solid #212529;
+        }
+
 </style>
 
 <div class="index_container">
@@ -47,7 +85,7 @@
         </div>
 
         <div class="index_container_logon"></div>
-    
+
     </div>
 
     <div class="index_container_newBooks">
@@ -58,7 +96,7 @@
         </div>
 
         <div class="index_container_newBooks_content">
-            @for (int i = 0; i < 10; i++)
+            @for (int i = 0; i < 6; i++)
             {
                 <div class="index_container_book">
                     <div class="index_container_book_img" style="background-image:url(./img/book01.jpg);"></div>
@@ -83,7 +121,7 @@
             <h5>download our desktop application </h5>
             <h5>for more easy access to the our book library</h5>
 
-            <button>Download</button>
+            <a id="index_download" class="index_container_main_btn">Download</a>
 
         </div>
     </div>
@@ -95,12 +133,41 @@
             <h5>join our group chat on discord</h5>
             <h5>by clicking the button below</h5>
 
-            <button>Discord</button>
+            <a id="index_discord" class="index_container_main_btn">Discord</a>
 
         </div>
     </div>
 
     <div class="index_container_updates">
+
+        <div class="index_container_title">
+            <h1>Updates</h1>
+            <div class="index_container_viewMore_right_recommends_hide"><a class="index_container_viewMore_right" asp-controller="Home" asp-action="NewNovels">View More >></a></div>
+        </div>
+
+        <div class="index_container_recommends_content">
+            @for (int i = 0; i < 6; i++)
+            {
+                <div class="index_container_book_list">
+                    <div class="index_container_book_list_img" style="background-image:url(./img/book01.jpg);"></div>
+                    <div class="index_container_book_list_content">
+                        <div class="index_container_book_list_title">
+                            <h6>the old gods are whispering</h6>
+                        </div>
+                        <div class="index_container_book_list_info">
+                            <div class="index_container_book_list_info_gen">martial arts</div>
+                            <div class="index_container_book_info_chapters">234 ch</div>
+                        </div>
+                        <div class="index_container_book_time">Add 54 minutes ago</div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="index_container_recommends_viewMore">
+            <a class="index_container_recommends_viewMore_btn" asp-controller="Home" asp-action="NewNovels">View More</a>
+        </div>
+
     </div>
 
     <div class="index_container_ranking"></div>
@@ -109,24 +176,30 @@
 
         <div class="index_container_title">
             <h1>Recommends</h1>
-            <a class="index_container_viewMore_right" asp-controller="Home" asp-action="NewNovels">View More >></a>
+            <div class="index_container_viewMore_right_recommends_hide"><a class="index_container_viewMore_right" asp-controller="Home" asp-action="NewNovels">View More >></a></div>
         </div>
 
         <div class="index_container_recommends_content">
-            @for (int i = 0; i < 10; i++)
+            @for (int i = 0; i < 6; i++)
             {
-                <div class="index_container_book">
-                    <div class="index_container_book_img" style="background-image:url(./img/book01.jpg);"></div>
-                    <div class="index_container_book_title">
-                        <h6>the old gods are whispering</h6>
+                <div class="index_container_book_list">
+                    <div class="index_container_book_list_img" style="background-image:url(./img/book01.jpg);"></div>
+                    <div class="index_container_book_list_content">
+                        <div class="index_container_book_list_title">
+                            <h6>the old gods are whispering</h6>
+                        </div>
+                        <div class="index_container_book_list_info">
+                            <div class="index_container_book_list_info_gen">martial arts</div>
+                            <div class="index_container_book_info_chapters">234 ch</div>
+                        </div>
+                        <div class="index_container_book_time">Add 54 minutes ago</div>
                     </div>
-                    <div class="index_container_book_info">
-                        <div class="index_container_book_info_gen">martial arts</div>
-                        <div class="index_container_book_info_chapters">234 ch</div>
-                    </div>
-                    <div class="index_container_book_time">Add 54 minutes ago</div>
                 </div>
             }
+        </div>
+
+        <div class="index_container_recommends_viewMore">
+            <a class="index_container_recommends_viewMore_btn" asp-controller="Home" asp-action="NewNovels">View More</a>
         </div>
 
     </div>

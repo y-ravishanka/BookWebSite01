@@ -98,15 +98,14 @@
             transition: 0.25s;
         }
 
-        .index_container_account_btn button:hover span {
-            width: 100%;
-            z-index: -1;
-        }
+            .index_container_account_btn button:hover span {
+                width: 100%;
+                z-index: -1;
+            }
 
 @media (max-width: 575px) {
     .index_container_logout {
         padding-top: 100px;
-        
     }
 
     .index_container_account_btn {
@@ -117,10 +116,14 @@
     }
 }
 
+/* index container logon css ------------------------------------------------------------------------------------------------- */
+
 .index_container_logon {
     height: 95vh;
     background-color: red;
 }
+
+/* end of index container logon css ---------------------------------------------------------------------------------------------- */
 
 .index_container_newBooks {
     height: 95vh;
@@ -132,83 +135,93 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
+/* index container title css ------------------------------------------------------------------------------------------------------- */
+
 .index_container_title {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding-top: 20px;
-    padding-left: 30px;
+    /*padding-top: 20px;
+    padding-left: 30px;*/
+    margin-top: 10px;
 }
 
     .index_container_title h1 {
-        /*margin-top: 10px;
-        margin-left: 30px;*/
+        margin-top: 10px;
+        margin-left: 30px;
     }
 
-    .index_container_newBooks_content {
-        height: 400px;
-        display: flex;
-        flex-direction: row;
-        overflow-x: scroll;
-        margin-left: 20px;
-        margin-top: 30px;
-        padding: 10px;
-        background-color: #E6E6E6;
-        align-items: center;
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+/* end of index container title css --------------------------------------------------------------------------------------------------------- */
+
+.index_container_newBooks_content {
+    /*height: 400px;*/
+    display: flex;
+    flex-direction: row;
+    overflow-y: scroll;
+    margin-inline: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 10px;
+    background-color: #E6E6E6;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.index_container_book {
+    height: 250px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    /*box-shadow: 0 4px 8px 0 rgba(0,0,0,0.9);*/
+    margin: 10px;
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+    .index_container_book:hover {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.9);
     }
 
-        .index_container_book {
-            height: 250px;
-            width: 150px;
-            display: flex;
-            flex-direction: column;
-            flex-shrink: 0;
-            /*box-shadow: 0 4px 8px 0 rgba(0,0,0,0.9);*/
-            margin: 10px;
-            cursor: pointer;
-            background-color: white;
-            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-        }
+.index_container_book_img {
+    background-size: cover;
+    width: 100%;
+    height: 150px;
+}
 
-            .index_container_book:hover {
-                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.9);
-            }
+.index_container_book_title {
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: capitalize;
+    padding: 5px;
+}
 
-            .index_container_book_img {
-                background-size: cover;
-                width: 100%;
-                height: 150px;
-            }
+.index_container_book_info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 12px;
+    color: gray;
+    padding-inline: 5px;
+}
 
-            .index_container_book_title {
-                font-weight: bold;
-                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                text-transform: capitalize;
-                padding: 5px;
-            }
+.index_container_book_info_gen {
+    text-transform: capitalize;
+}
 
-            .index_container_book_info {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                font-size: 12px;
-                color: gray;
-                padding-inline: 5px;
-            }
+.index_container_book_time {
+    font-size: 12px;
+    color: gray;
+    padding-inline: 5px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
 
-                .index_container_book_info_gen {
-                    text-transform: capitalize;
-                }
-
-            .index_container_book_time {
-                font-size: 12px;
-                color: gray;
-                padding-inline: 5px;
-                margin-top: 5px;
-                margin-bottom: 20px;
-            }
+/* view more right button css ------------------------------------------------------------------------------------------------------ */
 
 .index_container_viewMore_right {
     text-decoration: none;
@@ -217,10 +230,20 @@
     margin-top: 10px;
 }
 
-.index_container_viewMore_right:hover {
-    cursor: pointer;
-    color: red;
+    .index_container_viewMore_right:hover {
+        cursor: pointer;
+        color: red;
+    }
+
+@media (min-width: 1115px) {
+    a.index_container_viewMore_right {
+        display: none;
+    }
 }
+
+/* end of view more right button css ---------------------------------------------------------------------------------------------------- */
+
+/* index container app css -------------------------------------------------------------------------------------------------------------- */
 
 .index_container_app {
     height: 95vh;
@@ -230,37 +253,37 @@
     /*background-color: aqua;*/
     background-image: linear-gradient(rgba(255,255,255,1),rgba(255,255,255,0.8)), url(./img/img04.jpg);
     background-size: cover;
-    background-position: center;
+    /*background-position: center;*/
     align-items: center;
 }
 
-    .index_container_app_info {
-        height: 70vh;
-        width: 70vw;
-        /*margin-inline: 150px;*/
-        border-bottom-left-radius: 200vh;
-        border-bottom-right-radius: 200vh;
-        background-color: white;
-        flex-shrink: 1;
-        display:flex;
-        /*font-weight: bold;*/
-        flex-direction: column;
-        align-items: center;
-        padding-top: 50px;
-        font-family: 'Times New Roman', Times, serif;
+.index_container_app_info {
+    height: 70vh;
+    width: 70vw;
+    /*margin-inline: 150px;*/
+    border-bottom-left-radius: 200vh;
+    border-bottom-right-radius: 200vh;
+    background-color: white;
+    flex-shrink: 1;
+    display: flex;
+    /*font-weight: bold;*/
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+    .index_container_app_info h2 {
+        font-weight: bold;
+        font-display: block;
     }
 
-            .index_container_app_info h2 {
-                font-weight: bold;
-                font-display:block;
-            }
+    .index_container_app_info h5 {
+        font-style: italic;
+        text-transform: capitalize;
+    }
 
-            .index_container_app_info h5 {
-                font-style: italic;
-                text-transform: capitalize;
-            } 
-
-    /*.index_container_app_img {
+/*.index_container_app_img {
         height: 50%;
         background-color: rebeccapurple;
         border-bottom-left-radius: -500% -1000%;
@@ -281,6 +304,9 @@
     }
 }
 
+/* end of index container app css -------------------------------------------------------------------------------------------------------- */
+
+/* index container social css ------------------------------------------------------------------------------------------------------------ */
 
 .index_container_social {
     height: 95vh;
@@ -290,43 +316,42 @@
     /*background-color: aqua;*/
     background-image: linear-gradient(to top,rgba(255,255,255,1),rgba(255,255,255,0.8)), url(./img/img05.jpg);
     background-size: cover;
-    background-position: center;
+    /*background-position: center;*/
     align-items: center;
     justify-content: end;
 }
 
-    .index_container_social_info {
-        /*bottom: 0;*/
-        height: 70vh;
-        width: 70vw;
-        /*margin-inline: 150px;*/
-        border-top-left-radius: 200vh;
-        border-top-right-radius: 200vh;
-        background-color: white;
-        flex-shrink: 1;
-        display: flex;
-        /*font-weight: bold;*/
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        /*padding-bottom: 50px;*/
-        font-family: 'Times New Roman', Times, serif;
+.index_container_social_info {
+    /*bottom: 0;*/
+    height: 70vh;
+    width: 70vw;
+    /*margin-inline: 150px;*/
+    border-top-left-radius: 200vh;
+    border-top-right-radius: 200vh;
+    background-color: white;
+    flex-shrink: 1;
+    display: flex;
+    /*font-weight: bold;*/
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /*padding-bottom: 50px;*/
+    font-family: 'Times New Roman', Times, serif;
+}
+
+    .index_container_social_info h2 {
+        font-weight: bold;
+        font-display: block;
+        text-transform: capitalize;
     }
 
-        .index_container_social_info h2 {
-            font-weight: bold;
-            font-display: block;
-            text-transform: capitalize;
-        }
-
-        .index_container_social_info h5 {
-            font-style: italic;
-            text-transform: capitalize;
-        }
+    .index_container_social_info h5 {
+        font-style: italic;
+        text-transform: capitalize;
+    }
 
 @media (max-width: 768px) {
     .index_container_social {
-        
     }
 
     .index_container_social_info {
@@ -343,15 +368,32 @@
     }
 }
 
+/* end of index container social css --------------------------------------------------------------------------------------------- */
+
+/* index container updates css -------------------------------------------------------------------------------------------------- */
+
 .index_container_updates {
     height: 95vh;
-    background-color: red;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    /*padding-top: 10px;*/
+    /*padding-left: 30px;*/
+    font-family: 'Times New Roman', Times, serif;
 }
+
+/* end of index container updates css ------------------------------------------------------------------------------------------------- */
+
+/* index container ranking css -------------------------------------------------------------------------------------------------------- */
 
 .index_container_ranking {
     height: 95vh;
     background-color: red;
 }
+
+/* end of index container ranking css -----------------------------------------------------------------------------------------------------*/
+
+/* index container recommends css ------------------------------------------------------------------------------------------------------- */
 
 .index_container_recommends {
     height: 95vh;
@@ -363,16 +405,99 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
-    .index_container_recommends_content {
-        height: 70vh;
-        display: flex;
-        /*flex-direction: row;*/
-        overflow-y: scroll;
-        margin-inline: 20px;
-        margin-top: 30px;
-        padding: 10px;
-        background-color: #E6E6E6;
-        align-items: center;
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-        flex-wrap: wrap;
+.index_container_recommends_content {
+    height: 70vh;
+    display: flex;
+    /*flex-direction: row;*/
+    overflow-y: scroll;
+    margin-inline: 20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #E6E6E6;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.index_container_book_list {
+    /*height: 12vh;*/
+    width: 40vw;
+    display: flex;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    flex-direction: row;
+    cursor: pointer;
+}
+
+    .index_container_book_list:hover {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.9);
     }
+
+.index_container_book_list_img {
+    /*height: 100%;*/
+    width: 100px;
+    background-size: cover;
+}
+
+.index_container_book_list_content {
+    display: flex;
+    flex-direction: column;
+}
+
+.index_container_book_list_title {
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: capitalize;
+    padding: 5px;
+}
+
+.index_container_book_list_info {
+    display: flex;
+    flex-direction: row;
+    /*justify-content: space-between;*/
+    font-size: 12px;
+    color: gray;
+    padding-inline: 5px;
+}
+
+.index_container_book_list_info_gen {
+    text-transform: capitalize;
+    width: 100px;
+    text-align: start;
+}
+
+.index_container_recommends_viewMore {
+    display: none;
+    justify-content: center;
+    padding-top: 5px;
+}
+
+@media (width < 769px) {
+    /*.index_container_recommends_content {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        overflow-y: scroll;
+        align-items: flex-start;
+    }*/
+
+    .index_container_book_list {
+        width: 100%;
+    }
+}
+
+@media (width < 642px) {
+    .index_container_viewMore_right_recommends_hide {
+        display: none;
+    }
+
+    .index_container_recommends_viewMore {
+        display: flex;
+    }
+}
+
+/* end of index container recommends css  -------------------------------------------------------------------------------------- */
+
+
