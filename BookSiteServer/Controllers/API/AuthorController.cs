@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 
-namespace BookSiteServer.Controllers
+namespace BookSiteServer.Controllers.API
 {
     [Route("api/[controller]")]
     [ApiController]
