@@ -72,3 +72,8 @@ button.accept-policy {
         list-style: none;
         padding-inline: .5rem;
     }
+
+a.css_test {
+    background-color: red;
+    color: rebeccapurple;
+}
