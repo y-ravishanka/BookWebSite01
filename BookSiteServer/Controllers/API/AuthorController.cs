@@ -20,14 +20,14 @@ namespace BookSiteServer.Controllers.API
             {
                 bool t = await db.AddAuthorAsync(author);
                 if (t == true)
-                { return Ok(true); }
+                { GC.Collect(); return Ok(true); }
                 else
-                { return BadRequest(false); }
+                { GC.Collect(); return BadRequest(false); }
             }
             catch (Exception ex)
             {
                 Console.WriteLine("\nAPI Error: \n" + ex.ToString() + "\n");
-                return StatusCode(500);
+                GC.Collect(); return StatusCode(500);
             }
         }
 
@@ -39,14 +39,14 @@ namespace BookSiteServer.Controllers.API
             {
                 bool t = await db.UpdateAuthorAsync(Guid.Parse(id), name);
                 if (t == true)
-                { return Ok(true); }
+                { GC.Collect(); return Ok(true); }
                 else
-                { return BadRequest(false); }
+                { GC.Collect(); return BadRequest(false); }
             }
             catch (Exception ex)
             {
                 Console.WriteLine("\nAPI Error: \n" + ex.ToString() + "\n");
-                return StatusCode(500);
+                GC.Collect(); return StatusCode(500);
             }
         }
 
@@ -58,14 +58,14 @@ namespace BookSiteServer.Controllers.API
             {
                 bool t = await db.UpdateAuthorAsync(Guid.Parse(id), name);
                 if (t == true)
-                { return Ok(true); }
+                { GC.Collect(); return Ok(true); }
                 else
-                { return BadRequest(false); }
+                { GC.Collect(); return BadRequest(false); }
             }
             catch (Exception ex)
             {
                 Console.WriteLine("\nAPI Error: \n" + ex.ToString() + "\n");
-                return StatusCode(500);
+                GC.Collect(); return StatusCode(500);
             }
         }
 
@@ -77,14 +77,14 @@ namespace BookSiteServer.Controllers.API
             {
                 bool t = await db.UpdateAuthorAsync(Guid.Parse(id), book);
                 if (t == true)
-                { return Ok(true); }
+                { GC.Collect(); return Ok(true); }
                 else
-                { return BadRequest(false); }
+                { GC.Collect(); return BadRequest(false); }
             }
             catch (Exception ex)
             {
                 Console.WriteLine("\nAPI Error: \n" + ex.ToString() + "\n");
-                return StatusCode(500);
+                GC.Collect(); return StatusCode(500);
             }
         }
 
@@ -96,14 +96,14 @@ namespace BookSiteServer.Controllers.API
             {
                 Author author = await db.GetAuthorAsync(Guid.Parse(id));
                 if (author != null && author is Author)
-                { return Ok(author); }
+                { GC.Collect(); return Ok(author); }
                 else
-                { return NoContent(); }
+                { GC.Collect(); return NoContent(); }
             }
             catch (Exception ex)
             {
                 Console.WriteLine("\nAPI Error: \n" + ex.ToString() + "\n");
-                return StatusCode(500);
+                GC.Collect(); return StatusCode(500);
             }
         }
 
@@ -115,14 +115,14 @@ namespace BookSiteServer.Controllers.API
             {
                 Author author = await db.GetAuthorAsync(name);
                 if (author != null && author is Author)
-                { return Ok(author); }
+                { GC.Collect(); return Ok(author); }
                 else
-                { return NoContent(); }
+                { GC.Collect(); return NoContent(); }
             }
             catch (Exception ex)
             {
                 Console.WriteLine("\nAPI Error: \n" + ex.ToString() + "\n");
-                return StatusCode(500);
+                GC.Collect(); return StatusCode(500);
             }
         }
 
@@ -135,14 +135,14 @@ namespace BookSiteServer.Controllers.API
             {
                 IEnumerable<Book> book = await db.GetBooksAsync(name);
                 if (book != null && book.Any())
-                { return Ok(book); }
+                { GC.Collect(); return Ok(book); }
                 else
-                { return NoContent(); }
+                { GC.Collect(); return NoContent(); }
             }
             catch (Exception ex)
             {
                 Console.WriteLine("\nAPI Error: \n" + ex.ToString() + "\n");
-                return StatusCode(500);
+                GC.Collect(); return StatusCode(500);
             }
         }
 
@@ -154,14 +154,14 @@ namespace BookSiteServer.Controllers.API
             {
                 IEnumerable<Book> book = await db.GetBooksAsync(Guid.Parse(id));
                 if (book != null && book.Any())
-                { return Ok(book); }
+                { GC.Collect(); return Ok(book); }
                 else
-                { return NoContent(); }
+                { GC.Collect(); return NoContent(); }
             }
             catch (Exception ex)
             {
                 Console.WriteLine("\nAPI Error: \n" + ex.ToString() + "\n");
-                return StatusCode(500);
+                GC.Collect(); return StatusCode(500);
             }
         }
     }
