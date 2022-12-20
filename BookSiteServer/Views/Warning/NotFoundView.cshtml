@@ -1,15 +1,36 @@
 ﻿
 <style>
-    * {
+    .notfound_body {
+        height: 60vh;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
+        text-transform: capitalize;
+        font-weight: bold;
     }
-    h3 {
-        
+
+    .notfound_body_title01 {
+        text-transform: capitalize;
+        font-size: 90px;
+    }
+    
+    .notfound_body_title02{
+        font-size: 30px;
+    }
+
+    .notfound_body_content {
+        text-align: center;
+        padding-inline: 20px;
+        display: flex;
+        justify-content: center;
+        font-weight: normal;
+        font-size: 20px;
     }
 </style>
 
-<h1>404</h1>
-<h2>Not Found</h2>
-<h3>context you search is not found within the website</h3>
+<div class="notfound_body">
+    <div class="notfound_body_title01">404</div>
+    <div class="notfound_body_title02">Not Found</div>
+    <div class="notfound_body_content">content you search is not found within the website</div>
+</div>
