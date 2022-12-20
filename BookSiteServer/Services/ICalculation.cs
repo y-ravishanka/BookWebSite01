@@ -2,5 +2,6 @@
 {
     internal interface ICalculation
     {
+        void DisplayExceptions(string title, string message);
     }
 }
