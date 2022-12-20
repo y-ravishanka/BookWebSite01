@@ -1,5 +1,6 @@
 ﻿using BookSiteServer.Data;
 using BookSiteServer.Models;
+using BookSiteServer.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookSiteServer.Controllers
@@ -7,9 +8,8 @@ namespace BookSiteServer.Controllers
     public class AuthorController : Controller
     {
         private readonly IAuthorData db = new AuthorData();
-
-        private void DisplayExceptionMessage(string message)
-        { Console.WriteLine("\nAuthorController Exception : \n###----------\n" + message + "\n"); }
+        private readonly ICalculation cal = new Calculation();
+        private readonly string ecTitle = "AuthorController Exception";
 
         public async Task<IActionResult> Books(int id, string value)
         {
@@ -22,7 +22,7 @@ namespace BookSiteServer.Controllers
                 }
                 catch (Exception ex)
                 {
-                    DisplayExceptionMessage(ex.ToString());
+                    cal.DisplayExceptions(ecTitle, ex.ToString());
                     author = null;
                 }
             }
