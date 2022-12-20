@@ -1,0 +1,14 @@
+﻿
+@media (width < 780px) {
+
+    .notfound_body_title01 {
+        font-size: 70px;
+    }
+}
+
+@media (width < 578px) {
+
+    .notfound_body_title01 {
+        font-size: 50px;
+    }
+}
