@@ -1,6 +1,7 @@
 ﻿using BookSiteServer.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic;
+using System.Linq;
 
 namespace BookSiteServer.Data
 {
@@ -30,7 +31,11 @@ namespace BookSiteServer.Data
                 var author = from a in context.Authors
                              where a.AuthorId == id
                              select a;
-                return (Author)author;
+
+                if (author == null)
+                { return null; }
+                else
+                { return await author.FirstOrDefaultAsync(); }
             }
             catch (Exception ex)
             {
@@ -47,7 +52,11 @@ namespace BookSiteServer.Data
                              from aa in a.AltName
                              where a.Name == name || aa.Name == name
                              select a;
-                return (Author)author;
+
+                if (author == null)
+                { return null; }
+                else
+                { return await author.FirstOrDefaultAsync(); }
 
             }
             catch (Exception ex)
@@ -62,9 +71,9 @@ namespace BookSiteServer.Data
             try
             {
                 var books = from a in context.Authors
-                            where a.AuthorId == id
-                            select a.Books;
-                return (List<Book>)books;
+                             where a.AuthorId == id
+                             select a.Books;
+                return new List<Book>(books.FirstOrDefault());
             }
             catch (Exception ex)
             {
@@ -81,7 +90,7 @@ namespace BookSiteServer.Data
                             from aa in a.AltName
                             where a.Name.Equals(name) || aa.Name.Equals(name)
                             select a.Books;
-                return (List<Book>)books;
+                return new List<Book>(books.FirstOrDefault());
             }
             catch (Exception ex)
             {
