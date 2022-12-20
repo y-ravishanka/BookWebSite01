@@ -1,4 +1,5 @@
 ﻿using BookSiteServer.Models;
+using BookSiteServer.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic;
 using System.Linq;
@@ -7,7 +8,9 @@ namespace BookSiteServer.Data
 {
     internal class AuthorData : IAuthorData
     {
-        private BookSiteContext context = new();
+        private readonly BookSiteContext context = new();
+        private readonly ICalculation cal = new Calculation();
+        private readonly string ecTitle = "AuthorData EF Core Method Exception";
 
         async Task<bool> IAuthorData.AddAuthorAsync(Author author)
         {
@@ -19,7 +22,7 @@ namespace BookSiteServer.Data
             }
             catch (Exception ex)
             {
-                Console.WriteLine("\n" + ex.ToString() + "\n");
+                cal.DisplayExceptions(ecTitle, ex.ToString());
                 return false;
             }
         }
@@ -39,7 +42,7 @@ namespace BookSiteServer.Data
             }
             catch (Exception ex)
             {
-                Console.WriteLine("\n" + ex.ToString() + "\n");
+                cal.DisplayExceptions(ecTitle, ex.ToString());
                 return null;
             }
         }
@@ -61,7 +64,7 @@ namespace BookSiteServer.Data
             }
             catch (Exception ex)
             {
-                Console.WriteLine("\n" + ex.ToString() + "\n");
+                cal.DisplayExceptions(ecTitle, ex.ToString());
                 return null;
             }
         }
@@ -71,13 +74,13 @@ namespace BookSiteServer.Data
             try
             {
                 var books = from a in context.Authors
-                             where a.AuthorId == id
-                             select a.Books;
+                            where a.AuthorId == id
+                            select a.Books;
                 return new List<Book>(books.FirstOrDefault());
             }
             catch (Exception ex)
             {
-                Console.WriteLine("\n" + ex.ToString() + "\n");
+                cal.DisplayExceptions(ecTitle, ex.ToString());
                 return null;
             }
         }
@@ -94,7 +97,7 @@ namespace BookSiteServer.Data
             }
             catch (Exception ex)
             {
-                Console.WriteLine("\n" + ex.ToString() + "\n");
+                cal.DisplayExceptions(ecTitle, ex.ToString());
                 return null;
             }
         }
@@ -113,7 +116,7 @@ namespace BookSiteServer.Data
             }
             catch (Exception ex)
             {
-                Console.WriteLine("\n" + ex.ToString() + "\n");
+                cal.DisplayExceptions(ecTitle, ex.ToString());
                 return false;
             }
         }
@@ -132,7 +135,7 @@ namespace BookSiteServer.Data
             }
             catch (Exception ex)
             {
-                Console.WriteLine("\n" + ex.ToString() + "\n");
+                cal.DisplayExceptions(ecTitle, ex.ToString());
                 return false;
             }
         }
@@ -151,7 +154,7 @@ namespace BookSiteServer.Data
             }
             catch (Exception ex)
             {
-                Console.WriteLine("\n" + ex.ToString() + "\n");
+                cal.DisplayExceptions(ecTitle, ex.ToString());
                 return false;
             }
         }
@@ -170,7 +173,7 @@ namespace BookSiteServer.Data
             }
             catch (Exception ex)
             {
-                Console.WriteLine("\n" + ex.ToString() + "\n");
+                cal.DisplayExceptions(ecTitle, ex.ToString());
                 return false;
             }
         }
