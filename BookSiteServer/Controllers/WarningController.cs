@@ -4,7 +4,12 @@ namespace BookSiteServer.Controllers
 {
     public class WarningController : Controller
     {
-        public IActionResult Index()
+        public IActionResult NotFoundView()
+        {
+            return View();
+        }
+
+        public IActionResult UnauthorizedView()
         {
             return View();
         }
