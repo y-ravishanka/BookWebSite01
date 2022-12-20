@@ -2,7 +2,7 @@
 
 namespace BookSiteServer.Controllers
 {
-    public class TagDataController : Controller
+    public class TagController : Controller
     {
         public IActionResult Index()
         {
